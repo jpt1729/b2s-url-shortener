@@ -8,7 +8,7 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
 );
 
 const getURL = async (id) => {
-  records = await base('urls')
+  const records = await base('urls')
       .select({
         filterByFormula: `{name} = "${id}"`, // Adjust field name as needed
       })
